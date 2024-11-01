@@ -1,0 +1,94 @@
+:root {
+    --primary-clr: #F3F3F3;
+    --secondary-clr: #151515;
+    --accent-clr: #7BBF15;
+    --subheading-clr: wheat;
+    --gradient: linear-gradient(50deg,rgb(0, 100, 0) 1%,white, white, white);
+    --secondary-accent-clr: rgb(114, 165, 38);
+  
+    --grey-background: #EAEAEA;
+    --navbar-height: 4.5rem;
+    --app-border-radius: 1rem;
+    --app-box-shadow: inset 0px 0px 2px grey;
+}
+  
+@font-face {
+    font-family: "Young Serif";
+    src: url("/fonts/YoungSerif.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kaushan Script";
+    src: url("/fonts/KaushanScript.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+  
+/* RESET|SET STANDARD STYLING */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Geneva, Tahoma, sans-serif;
+    background: var(--primary-clr);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    min-height: auto;
+}
+
+main {
+    margin-top: var(--navbar-height);
+    /* min-height: calc(100vh - var(--navbar-height)); */
+}
+
+  .disable-select {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+.default-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+}
+
+.default-article {
+    width: 80%;
+    max-width: 53rem;
+    margin-bottom: 4rem;
+}
+.default-heading {
+    font-family: 'Young Serif', serif;
+    background-color: var(--secondary-clr);
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    position: sticky;
+    top: calc(var(--navbar-height) + 1rem);
+    color: var(--accent-clr);
+    font-size: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    z-index: 2;
+}
+.navbar-divider {
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+    height: 1px;
+    margin: 0 auto;
+}
+@media (max-width: 650px) {
+    .default-article {
+      width: 90%;
+    }
+}
