@@ -1,0 +1,11 @@
+[Unit]
+Description=Kanuseite Socket
+
+[Socket]
+Accept=no
+RemoveOnStop=yes
+Service=kanuseite.service
+ListenStream=/tmp/kanuseite.sock
+
+[Install]
+WantedBy=sockets.target

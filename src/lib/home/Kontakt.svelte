@@ -8,7 +8,7 @@
                 <h3 class="contact-name">Adresse:</h3>
                 <div class="contact__column">
                     <p>Henryk Siemon-Ueberfeld</p>
-                    <p>Kienitzerstraße 19a</p>
+                    <p>Kienitzer Str. 19a</p>
                     <p>15324 Letschin</p>
                 </div>
             </div>

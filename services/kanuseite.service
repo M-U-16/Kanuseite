@@ -1,0 +1,15 @@
+[Unit]
+Description=Kanuseite Service
+After=network.target
+StartLimitBurst=3
+StartLimitIntervalSec=60
+Restart=on-failure
+RestartSec=3
+
+[Service]
+ExecStart=/usr/bin/podman run --rm --name kanu_service
+ExecStop=/usr/bin/podman stop kanu_service
+ExecRestart=/usr/bin/podman restart kanu_service
+
+[Install]
+WantedBy=multi-user.target
