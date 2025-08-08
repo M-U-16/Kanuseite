@@ -11,9 +11,7 @@
     max-width: 100%;
     padding: 3rem 0;
 }
-.app__page-container article {
-    margin-bottom: 1rem;
-}
+
 @media screen and (max-width: 700px) {
     .app__page-container {
         padding: 2rem 1.5rem;

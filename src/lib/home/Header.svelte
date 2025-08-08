@@ -1,4 +1,5 @@
 <header class="main__header">
+    
     <section class="welcom-section">
       <div class="text-content">
         <div class="header__headings">

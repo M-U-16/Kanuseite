@@ -3,11 +3,11 @@ Description=Kanuseite Service
 After=network.target
 StartLimitBurst=3
 StartLimitIntervalSec=60
-Restart=on-failure
-RestartSec=3
 
 [Service]
-ExecStart=/usr/bin/podman run --rm --name kanu_service
+RestartSec=3
+Restart=on-failure
+ExecStart=/usr/bin/podman run --rm --name kanu_service -v /tmp/kanuseite.sock:/tmp/kanuseite.sock kanuseite
 ExecStop=/usr/bin/podman stop kanu_service
 ExecRestart=/usr/bin/podman restart kanu_service
 

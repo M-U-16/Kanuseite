@@ -1,0 +1,41 @@
+server {
+	server_name kanu-oderbruch.de www.kanu-oderbruch.de;
+
+	location / {
+		#if ($host !~* "kanu-oderbruch.de\.de") {
+		#	return 301 "https://kanu-oderbruch.de/#achtung";
+		#}
+
+		proxy_pass http://sock;
+		include proxy_params;
+		proxy_ssl_server_name on;
+	}
+
+    #listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    #listen 443 ssl; # managed by Certbot
+	#ssl_certificate /etc/letsencrypt/live/maurice-ueberfeld.de/fullchain.pem;
+	#ssl_certificate_key /etc/letsencrypt/live/maurice-ueberfeld.de/privkey.pem;
+	#include /etc/letsencrypt/options-ssl-nginx.conf;
+	#ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+server {
+    if ($host = www.kanu-oderbruch.de) {
+    	return 301 https://$host$request_uri;
+    }
+
+
+    if ($host = kanu-oderbruch.de) {
+    	return 301 https://$host$request_uri;
+    }
+
+	listen 80;
+	listen [::]:80;
+   	server_name kanu-oderbruch.de www.kanu-oderbruch.de;
+    
+	return 404;
+}
+
+upstream sock {
+	server unix:/tmp/kanuseite.sock;
+}

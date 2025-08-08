@@ -10,5 +10,6 @@ RUN mkdir /home/kanuseite
 WORKDIR /home/kanuseite
 COPY package*.json .
 COPY --from=build /tmp/kanuseite/build .
-#RUN npm install --omit dev
-CMD [ "node", "index.js" ]
+
+ENV SOCKET_PATH="/tmp/kanuseite.sock"
+CMD ["node", "index.js" ]
