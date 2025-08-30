@@ -9,7 +9,7 @@ RestartSec=3
 Restart=on-failure
 ExecStart=/usr/bin/podman run --rm --name kanu_service -v /tmp/kanuseite.sock:/tmp/kanuseite.sock kanuseite
 ExecStop=/usr/bin/podman stop kanu_service
-ExecRestart=/usr/bin/podman restart kanu_service
+ExecReload=/usr/bin/podman restart kanu_service
 
 [Install]
 WantedBy=multi-user.target
